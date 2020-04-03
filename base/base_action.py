@@ -24,6 +24,7 @@ class BaseAction:
    #通过元素的id和元素的下标，查找并返回该元素
     def custom_find_ele_ById_And_index(self, loc, eleIndex):
         list = self.driver.find_elements(By.ID,loc[1])
+        print(len(list))
         return list[eleIndex]
 
     # 通过元素的id和元素的内容，查找并返回一个元素
