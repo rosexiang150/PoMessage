@@ -40,7 +40,8 @@ class SendMessagePage(BaseAction):
 
     #打电话分支
     def click_img_button(self):
-        self.custom_find_ele_ById_And_index(self.img_button, 1)
+        ele = self.custom_find_ele_ById_And_index(self.img_button, 1)
+        ele.click()
 
     def click_phone_button(self):
         self.click(self.phone_button)
