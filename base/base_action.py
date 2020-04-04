@@ -21,10 +21,9 @@ class BaseAction:
         return WebDriverWait(self.driver, time, poll).until(lambda x:x.find_element(loc[0], loc[1]))
 
 
-   #通过元素的id和元素的下标，查找并返回该元素
+   #通过元素的id和元素的下标，查找并返回该元素,在脚本中需要对元素再操作
     def custom_find_ele_ById_And_index(self, loc, eleIndex):
         list = self.driver.find_elements(By.ID,loc[1])
-        print(len(list))
         return list[eleIndex]
 
     # 通过元素的id和元素的内容，查找并返回一个元素
