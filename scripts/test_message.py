@@ -8,6 +8,7 @@ import pytest
 
 from page.sendMessage_page import SendMessagePage
 from base.base_driver import BaseDriver
+from base.base_yml import yml_data_with_file
 
 class TestAddPerson:
 
@@ -30,7 +31,8 @@ class TestAddPerson:
     # @pytest.mark.run(order=2)
     # @pytest.mark.xfail(2 > 1, reason="标注为预期失败")
     # @pytest.mark.parametrize('contents', ['aa', 'bb', 'cc', 'dd'])
+    @pytest.mark.parametrize('text', yml_data_with_file()['search_data'])
     def test_send_mes(self):
         self.sendMessage.click_selected_button()
-        self.sendMessage.input_text_button('contentscontents')
+        self.sendMessage.input_text_button('text')
         self.sendMessage.click_send_button()
